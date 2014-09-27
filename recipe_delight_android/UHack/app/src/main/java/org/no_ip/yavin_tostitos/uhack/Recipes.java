@@ -2,13 +2,19 @@ package org.no_ip.yavin_tostitos.uhack;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.plus.PlusShare;
 
 
 public class Recipes extends Activity {
@@ -27,6 +33,22 @@ public class Recipes extends Activity {
 
         text.setText(name);
         final ImageView image = (ImageView) findViewById(R.id.image_recipe);
+
+        ImageButton shareButton = (ImageButton) findViewById(R.id.google_plus);
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Launch the Google+ share dialog with attribution to your app.
+                Intent shareIntent = new PlusShare.Builder(Recipes.this)
+                        .setType("text/plain")
+                        .setText("Check out this recipe brought to you by RecipeDelight!")
+                        .setContentUrl(Uri.parse("https://developers.google.com/+/"))
+                        .getIntent();
+
+                startActivityForResult(shareIntent, 0);
+            }
+        });
 
         if(name.equals("Cheesecake")){
             String desc = "Prep Time: 18 minutes<br />" +
@@ -69,4 +91,6 @@ public class Recipes extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

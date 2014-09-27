@@ -62,7 +62,9 @@
         android:layout_alignEnd="@+id/image_recipe"
         android:layout_below="@+id/text_description"
         android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
         android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
         android:columnCount="4"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
@@ -70,7 +72,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
+            android:id="@+id/facebook"
             android:src="@drawable/fb"
             android:layout_below="@+id/rating_recipe"
             android:layout_alignParentLeft="true"
@@ -81,36 +83,39 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton2"
-            android:layout_toEndOf="@+id/imageButton"
+            android:id="@+id/twitter"
+            android:layout_toEndOf="@+id/facebook"
             android:src="@drawable/tw"
             android:layout_alignTop="@+id/text_description"
-            android:layout_toRightOf="@+id/imageButton"
+            android:layout_toRightOf="@+id/facebook"
             android:layout_row="6"
             android:layout_column="1" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton5"
+            android:id="@+id/pinterest"
             android:src="@drawable/pt"
-            android:layout_toEndOf="@+id/imageButton3"
+            android:layout_toEndOf="@+id/google_plus"
             android:layout_below="@+id/rating_recipe"
-            android:layout_toRightOf="@+id/imageButton3"
+            android:layout_toRightOf="@+id/google_plus"
             android:layout_row="6"
             android:layout_column="2" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton3"
-            android:layout_toEndOf="@+id/imageButton2"
+            android:id="@+id/google_plus"
+            android:layout_toEndOf="@+id/twitter"
+            android:layout_toRightOf="@+id/twitter"
             android:src="@drawable/gp"
             android:layout_alignTop="@+id/text_description"
             android:layout_alignLeft="@+id/text_recipeHeader"
             android:layout_alignStart="@+id/text_recipeHeader"
             android:layout_row="6"
-            android:layout_column="3" />
+            android:layout_column="3"
+            android:clickable="true"
+            android:contentDescription="google+" />
 
     </GridLayout>
 
