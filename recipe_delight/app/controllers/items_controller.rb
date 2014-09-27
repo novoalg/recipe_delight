@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
     def search_site
         logger.info " ******* #{params[:Search]}"
-
+        @items = Item.having_name(params[:Search])
     end
 
     def search

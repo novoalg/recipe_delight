@@ -1,19 +1,26 @@
- <div class="row">
-    <% @items.each do |item| %>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Amount</th>
-                </tr>
-            <tbody>
-                <tr>
-                    <td><%= item.name %></td>
-                    <td><%= item.price %></td>
-                    <td><%= item.unit %></td>
-                </tr>
-            </tbody>
-        </table>
+ <div class="large-12 columns">
+    <% if @items.empty? %>
+        <h1>Item not found.</h1>
+        <%= render 'items/search_form' %>
+    <% else %>
+        <h1>Items found</h1>
+        <%= render 'items/search_form' %>
+        <% @items.each do |item| %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                    </tr>
+                <tbody>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td><%= item.price %></td>
+                        <td><%= item.unit %></td>
+                    </tr>
+                </tbody>
+            </table>
+        <% end %>
     <% end %>
 </div>

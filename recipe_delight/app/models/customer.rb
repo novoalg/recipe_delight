@@ -45,13 +45,13 @@ class Customer < ActiveRecord::Base
 			#lat_long << 			
 			#lat_long << 
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 			hash2 = JSON.parse(open("http://api.target.com/v2/store?nearby=#{lat_long[0]},#{lat_long[1]}&range=10&limit=100&locale=en-US&key=J5PsS2XGuqCnkdQq0Let6RSfvU7oyPwF"))
 			return lat_long
-=======
+#=======
 #			hash2 = JSON.parse(open("http://api.target.com/v2/store?nearby=#{lat_long[0]},#{lat_long[1]}&range=10&limit=100&locale=en-US&key=J5PsS2XGuqCnkdQq0Let6RSfvU7oyPwF"
 #			return lat_long
->>>>>>> ade803eb526e4ae1777791df3673c7a4d5f494d0
+#>>>>>>> ade803eb526e4ae1777791df3673c7a4d5f494d0
 		end
 
 end

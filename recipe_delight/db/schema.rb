@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140927131253) do
-=======
 ActiveRecord::Schema.define(version: 20140927141349) do
->>>>>>> ade803eb526e4ae1777791df3673c7a4d5f494d0
 
   create_table "coupons", force: true do |t|
     t.integer  "item_id"

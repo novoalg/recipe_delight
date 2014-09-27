@@ -8,6 +8,10 @@ module ApplicationHelper
     end
     
     def current_user?(user)
-        user == current_user
+        if current_user
+            user.id == current_user
+        else
+            false
+        end
     end
 end

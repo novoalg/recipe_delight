@@ -62,15 +62,12 @@ GEM
     mime-types (2.3)
     minitest (5.4.2)
     multi_json (1.10.1)
-<<<<<<< HEAD
     netrc (0.7.7)
-=======
     paperclip (4.2.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
->>>>>>> ade803eb526e4ae1777791df3673c7a4d5f494d0
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)

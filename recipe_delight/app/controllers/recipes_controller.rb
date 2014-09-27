@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+    before_filter :check_user, :only => [:customer_recipes]
+    include ApplicationHelper
 
 	def new 
 		@recipe = Recipe.new 
@@ -18,6 +20,10 @@ class RecipesController < ApplicationController
 		end 
 
 	end
+    
+    def customer_recipes
+
+    end
 
 	def search_recipe 
 		@recipes = Recipe.search(params[:search]) 
@@ -60,4 +66,8 @@ class RecipesController < ApplicationController
 		params.require(:recipe).permit!
 	end
 
+    def check_user 
+        customer = Customer.find(params[:id])
+        redirect_to root_path unless current_user?(current_user)
+    end
 end
