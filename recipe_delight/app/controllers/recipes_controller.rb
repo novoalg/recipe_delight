@@ -19,6 +19,16 @@ class RecipesController < ApplicationController
 
 	end
 
+	def search_recipe 
+		@recipes = Recipe.search(params[:search]) 
+		if !@recipes 
+			flash[:error] = "Could not find any recipes named #{params[:search]}"
+		end
+	end
+
+	def searches
+	end 
+
 	def destroy
 
 	end

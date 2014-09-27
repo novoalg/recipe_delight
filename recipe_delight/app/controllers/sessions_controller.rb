@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     customer = Customer.authenticate(params[:email], params[:password])
     if customer
         flash[:success] = "Welcome!"
-        session[:customer_id] = custumer.id
+        session[:customer_id] = customer.id
         redirect_to root_path 
     else
         flash[:error] = "Sorry but the email/password does not mach."

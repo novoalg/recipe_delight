@@ -34,4 +34,16 @@ class Customer < ActiveRecord::Base
     end
 
 
+		def find_location(location)
+			hash = JSON.parse(open("http://api.target.com/v2/location/geocode?place=#{location}&key=J5PsS2XGuqCnkdQq0Let6RSfvU7oyPwF&limit=5"))
+			lat_long =[]
+			logger.info("Location Hash*****#{hash}")
+			#determine lat and long
+			#lat_long << 			
+			#lat_long << 
+
+			hash2 = JSON.parse(open("http://api.target.com/v2/store?nearby=#{lat_long[0]},#{lat_long[1]}&range=10&limit=100&locale=en-US&key=J5PsS2XGuqCnkdQq0Let6RSfvU7oyPwF"
+			return lat_long
+		end
+
 end
