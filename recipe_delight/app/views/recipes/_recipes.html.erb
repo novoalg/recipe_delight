@@ -3,7 +3,7 @@
 		<center><%= link_to "#{recipes.name}", recipes %></center>
 	</td>
 	<td> 
-		<center><%= link_to "#{Customer.find(recipes.author_id).name}", "/customer/#{recipes.author_id}" %></center>
+		<center><%= link_to "#{Customer.find(recipes.author_id).name}", "/customers/#{recipes.author_id}" %></center>
 	</td>
 </tr>
 

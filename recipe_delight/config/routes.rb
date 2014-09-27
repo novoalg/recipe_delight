@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
     
+
+	resources :coupons
   resources :customers
   resources :items 
   post 'search/', :to => "items#search", :as => 'search_item'
   resources :recipes
-  resources :static_pages, :only => [:index]
-
+	post 'search/', :to => "recipes#search", :as => 'search_recipe'
+	get 'recipes/searches'
+	resources :static_pages, :only => [:index]
+	
   get 'sessions/new'
   post 'sessions/create'
   post 'sessions/destroy'
