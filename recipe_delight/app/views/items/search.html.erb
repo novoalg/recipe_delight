@@ -1,7 +1,16 @@
 <div class="large-12 columns">
+<% j = 0 %>
+        <h1>Search for Target Products</h1>
+        <%= form_tag search_item_path do %>
+            <%= text_field_tag "Search" %>
+            <%= submit_tag "Search" %>
+        <% end %>
+        <br/>
+        <hr/>
         <a href="http://www.target.com/s?searchTerm=<%=params[:Search]%>&category=0|All|matchallpartial|all+categories&classify=true&lnk=snav_sbox_clothes">Store site</a>
         <br/>
         <% for i in 0..(@product_count-1) %>
+        <hr/>
         <img src=<%="#{@thumbnails[i]}"%>>
         <table>
             <thead>
@@ -30,5 +39,19 @@
                 <% end %>
             </tbody>
         </table>
+                <p><b>Reviews: </b></p>
+            <% while !@reviews[j].nil? %>
+            <div class="panel">
+                <% if !@reviews[j].nil? %>
+                    <b><%=@review_screennames[j]%>-</b>
+                    <p>From: <%=@review_cities[j]%>, <%=@review_states[j]%></p>
+                    <p><%=@reviews[j]%></p>
+                    <p align="right">Posted: <%=@review_timestamps[j]%></p>
+                <% end %>
+                <% j += 1 %>
+            </div>
+            <% end %>
+                <% j +=1 %>
+            <hr/>
         <% end %>
 </div>

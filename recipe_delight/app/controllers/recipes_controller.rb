@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-    before_filter :check_user, :only => [:customer_recipes]
+    before_filter :check_user, :only => [:index, :show]
     include ApplicationHelper
 
 	def new 
@@ -21,10 +21,6 @@ class RecipesController < ApplicationController
 
 	end
     
-    def customer_recipes
-
-    end
-
 	def search_recipe 
 		@recipes = Recipe.search(params[:search]) 
 		if !@recipes 
@@ -38,6 +34,10 @@ class RecipesController < ApplicationController
 	def destroy
 
 	end
+
+    def show
+        @recipe = Recipe.find(params[:id])
+    end
 
 	def edit 
 		@recipe = Recipe.find(params[:id])
@@ -67,8 +67,10 @@ class RecipesController < ApplicationController
 	end
 
     def check_user 
-        customer = Customer.find(params[:id])
-        logger.info "*****#{params}"
-        redirect_to root_path unless current_user?(customer)
+        if current_user.nil?
+        #customer = Customer.find(params[:id])
+        #logger.info "*****#{params}"
+            redirect_to root_path 
+        end
     end
 end

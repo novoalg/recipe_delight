@@ -1,11 +1,14 @@
 class Customer < ActiveRecord::Base
     before_save :encrypt_password
     
+    #serialize :search_history, Array
+    #serialize :thumbnails, String
+    #serialize :search_count, Integer
 
 		has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
     
-    attr_accessor :password, :password_confirmation
+    attr_accessor :password, :password_confirmation #, :search_history, :thumbnails, :search_count
     VALID_EMAIL_REGEX = /.+@.+/
     #VALID_DOB_REGEX = /\d\d-\d\d-\d\d\d\d/
     validates_format_of :email, :with => VALID_EMAIL_REGEX 

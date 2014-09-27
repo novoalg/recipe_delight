@@ -3,8 +3,8 @@
         <h1>Item not found.</h1>
         <%= render 'items/search_form' %>
     <% else %>
-        <h1>Items found</h1>
         <%= render 'items/search_form' %>
+        <h1>Items found</h1>
         <% @items.each do |item| %>
             <table>
                 <thead>

@@ -10,12 +10,15 @@ Rails.application.routes.draw do
   resources :customers
   resources :items 
   post 'search/', :to => "items#search", :as => 'search_item'
+  get 'search/', :to => "items#index"
+  get 'search_site/', :to => "items#index"
   post 'search_site/', :to => "items#search_site", :as => 'search_site_item'
+  #post 'get_thumbnails/', :to => "items#get_thumbnails", :as => 'get_thumbnails'
+
 
   resources :recipes
   post 'search/', :to => "recipes#search", :as => 'search_recipe'
   get 'recipes/searches'
-  get 'customer_recipes/:id', :to => "recipes#customer_recipes", :as => 'customer_recipes'
 
   resources :static_pages, :only => [:index]
 	
