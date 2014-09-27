@@ -1,0 +1,17 @@
+<center>
+<table>
+	<thead> 
+		<tr>
+			<th width="400" colspan="2" >
+				<center>Recipes</center>
+			</th> 
+		</tr>
+	</thead>
+	<tbody>
+		<% @recipes.each do |recipes| %>
+			<%= render 'recipes.html.erb', recipes: recipes  %> 
+		<% end %> 
+	</tbody>
+</table>
+</center>
+<%= will_paginate @recipes %> 

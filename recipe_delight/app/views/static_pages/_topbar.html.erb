@@ -32,13 +32,13 @@
 
             <% end %>
             <li class="has-dropdown not-click"> 
-                <a href="#">Menu Dropdown</a>
+                <a href="#">Main Menu</a>
                 <ul class="dropdown"> 
                     <li>
-                        <a href="#">First link</a>
+                        <%= link_to "Recipes", "/recipes" %>
                     </li> 
-                    <li class="active">
-                        <a href="#">Active link</a>
+                    <li>
+                       <%= link_to "Products", "/items" %> 
                     </li> 
                 </ul> 
             </li> 
@@ -47,7 +47,6 @@
         <!-- Left Nav Section --> 
         <ul class="left"> 
             <li>
-                <a href="#">Redirect</a>
             </li>
         </ul> 
     </section> 
