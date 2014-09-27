@@ -28,6 +28,10 @@ class CustomersController < ApplicationController
 
 	def show 
 		@customer = Customer.find(params[:id])
+<<<<<<< HEAD
+		@recipes = Recipe.all
+=======
+>>>>>>> 6ddcd94d97b41b70766dccbccb968ea53a12cf4d
 	end
 
   def edit

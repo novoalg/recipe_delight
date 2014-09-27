@@ -76,25 +76,9 @@
 </div>
 <div class="small-9 columns">
     <ul class="small-block-grid-3">
-        <!-- need to add image_tag("nam", alt=slide 1-x) <- should increment with loo[ -->
-        <li>
-            <img src="i.imgur.com/4szfl1e.jpg" alt="slide 1"/>
-            <div class="orbit-caption">
-                caption 1
-            </div>
-        </li>
-        <li>
-            <img src="i.imgur.com/4szfl1e.jpg" alt="slide 1"/>
-            <div class="orbit-caption">
-                caption 2
-            </div>
-        </li>
-        <li>
-            <img src="i.imgur.com/4szfl1e.jpg" alt="slide 1"/>
-            <div class="orbit-caption">
-                caption 3
-            </div>
-        </li>
+		<% @recipes.each do |recipe| %>
+			<%= render  'recipes/customer_recipe.html.erb', recipe: recipe %>
+		<% end %> 
     </ul>
 </div>
 </div>
