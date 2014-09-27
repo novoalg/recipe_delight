@@ -17,6 +17,8 @@ gem 'foundation-rails'
 gem 'hirb'
 gem 'stripe'
 
+gem "paperclip", "~> 4.2"
+
 gem 'will_paginate', '~> 3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

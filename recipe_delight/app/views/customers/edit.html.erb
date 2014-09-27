@@ -19,7 +19,10 @@
         <%= form.label "Female" %>
 
         <%= form.label :location %>
-        <%= form.password_field :location %>
+        <%= form.text_field :location %>
+
+				<%= form.label :avatar %>
+				<%= form.file_field :avatar %>
 
         <%= form.label :password %>
         <%= form.password_field :password %>
