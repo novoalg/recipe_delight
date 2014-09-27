@@ -1,14 +1,17 @@
 <div class="row">
 <div class="small-2 large-4 columns">
-Cust Image
+<p>
+<%= image_tag @customer.avatar.url %>
+</p>
 </div> 
 <div class="small-6 large-8 columns">
-    <div class="small-6 large-6 columns">
-        <table> 
+<p>  
+  <div class="small-6 large-6 columns">
+        <table width="300"> 
             <thead>
                 <tr>
                     <th>
-                        Shopping List
+                        Current Shopping List
                     </th>
                 </tr>
             </thead>
@@ -26,12 +29,14 @@ Cust Image
             </tbody>
         </table>
     </div>
-        <div class="small-6 large-6 columns">
-        <table> 
+	</p>
+		<p>
+      <div class="small-6 large-6 columns">
+        <table width="200"> 
             <thead>
                 <tr>
                     <th>
-                        Coupons
+                       Selected Coupons
                     </th>
                 </tr>
             </thead>
@@ -46,10 +51,11 @@ Cust Image
                 <tr>
                     <td>Coupon 3</td>
                 </tr>
-    </tbody>
+			    </tbody>
         </table>
     </div>
-</div> 
+	</div>
+</p> 
 </div> 
 <div class="row">
 <div class="small-3 columns">
