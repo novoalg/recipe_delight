@@ -53,8 +53,8 @@ public class Main extends Activity {
         ListView listView = (ListView) findViewById(R.id.list_items);
 
         ArrayList<String> products = new ArrayList<String>();
-        products.add("Llama");
-        products.add("Mountain Dew");
+        products.add("5 Eggs");
+        products.add("9 1/3 Tbs butter");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, products);
 
