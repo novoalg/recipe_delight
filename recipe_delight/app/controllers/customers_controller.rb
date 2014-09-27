@@ -28,6 +28,7 @@ class CustomersController < ApplicationController
 
 	def show 
 		@customer = Customer.find(params[:id])
+		@recipes = Recipe.all
 	end
 
   def edit

@@ -1,9 +1,11 @@
 <tr> 
 	<td> 
-		<center><%= link_to "#{recipes.name}", recipes %></center>
+		<center><%= image_tag recipes.image.url(:medium) %></center>
 	</td>
+</tr>
+<tr> 
 	<td> 
-		<center><%= link_to "#{Customer.find(recipes.author_id).name}", "/customers/#{recipes.author_id}" %></center>
+		<center><%= link_to "#{recipes.name}", recipes %></center>
 	</td>
 </tr>
 

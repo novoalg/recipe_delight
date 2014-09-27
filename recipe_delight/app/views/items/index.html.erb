@@ -1,7 +1,18 @@
-<h1>Search</h1>
+<table >
+	<tr>
+		<td >
 <div class="large-5 columns">
+<h1>Search</h1>
 <%= form_tag search_item_path do %>
     <%= text_field_tag "Search" %>
     <%= submit_tag "Search" %>
+		<br/>
 <% end %>
 </div>
+</td>
+</tr>
+<tr>
+	<td><%= image_tag( "Fruit.jpg", :size=> '16X30') %> </td>
+</tr>
+</table>
+<!-- just ignore this, I'm really tired -->

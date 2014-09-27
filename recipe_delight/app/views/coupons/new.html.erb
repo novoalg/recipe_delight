@@ -1,11 +1,11 @@
 <h1>New Coupon</h1>
 <div class="large-5 columns">
-    <%= form_for @Coupon do |form| %>
+    <%= form_for @coupon do |form| %>
 		    <%= form.label :discount %>
         <%= form.text_field :discount %>
 
-        <%= form.label :activate_date %>
-        <%= form.date_field :activate_date %>
+        <%= form.label :active_date %>
+        <%= form.date_field :active_date %>
 
         <%= form.label :deactivate_date %>
         <%= form.date_field :deactivate_date %>
