@@ -8,6 +8,13 @@ module ApplicationHelper
     end
     
     def current_user?(user)
-        user == current_user
+        logger.info "************ U #{user}"
+        logger.info "************ cU#{current_user}"
+        logger.info "************ #{current_user==user}"
+        if current_user
+            user == current_user
+        else
+            false
+        end
     end
 end

@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
     
 
+  get 'shopping_carts/checkout'
+  get 'shopping_carts/show'
+  put 'shopping_carts/add_item_to_cart'
+
+
 	resources :coupons
   resources :customers
   resources :items 
   post 'search/', :to => "items#search", :as => 'search_item'
+  post 'search_site/', :to => "items#search_site", :as => 'search_site_item'
+
   resources :recipes
-	post 'search/', :to => "recipes#search", :as => 'search_recipe'
-	get 'recipes/searches'
-	resources :static_pages, :only => [:index]
+  post 'search/', :to => "recipes#search", :as => 'search_recipe'
+  get 'recipes/searches'
+  get 'customer_recipes/:id', :to => "recipes#customer_recipes", :as => 'customer_recipes'
+
+  resources :static_pages, :only => [:index]
 	
   get 'sessions/new'
   post 'sessions/create'

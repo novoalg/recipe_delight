@@ -56,7 +56,11 @@ class CustomersController < ApplicationController
     end
 
     def check_user
-        customer = Customer.find(params[:id])
-        redirect_to root_url unless current_user?(customer)
+        if params[:id].nil?
+            redirect_to root_url unless !current_user.nil?
+        else
+            customer = Customer.find(params[:id])
+            redirect_to root_url unless current_user?(customer)
+        end
     end
 end

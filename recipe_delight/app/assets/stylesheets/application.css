@@ -19,3 +19,12 @@
     margin-right: auto;
     max-width: initial;
  }
+
+
+ body {
+    background: #FFE6D1;
+ }  
+
+ p {
+    font-color: #000123;
+}

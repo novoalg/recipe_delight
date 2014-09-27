@@ -18,6 +18,9 @@
                 <% end %>
             </li> 
             <% if current_user %>
+                <li>
+                    <%= link_to "My Recipes", customer_recipes_path(current_user) %>
+                </li>
                 <li class="has-dropdown not-click"> 
                     <%= link_to "#{current_user.name}", customer_path(current_user) %>
                     <ul class="dropdown"> 

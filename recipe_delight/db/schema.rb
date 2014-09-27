@@ -78,6 +78,12 @@ ActiveRecord::Schema.define(version: 20140927141349) do
     t.datetime "image_updated_at"
   end
 
+  create_table "shopping_carts", force: true do |t|
+    t.string   "stripe_customer_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "stores", force: true do |t|
     t.string   "location"
     t.string   "hours"
