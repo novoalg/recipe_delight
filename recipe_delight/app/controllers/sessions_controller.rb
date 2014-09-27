@@ -5,8 +5,9 @@ class SessionsController < ApplicationController
   def create
     customer = Customer.authenticate(params[:email], params[:password])
     if customer
-    flash[:success] = "Welcome!"
-    redirect_to root_path 
+        flash[:success] = "Welcome!"
+        session[:customer_id] = custumer.id
+        redirect_to root_path 
     else
         flash[:error] = "Sorry but the email/password does not mach."
         render 'new'
@@ -14,6 +15,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_user = nil
+    session[:customer_id] = nil
   end
 
   private

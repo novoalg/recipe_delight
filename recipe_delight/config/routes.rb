@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   post 'sessions/create'
 
-  get 'sessions/destroy'
+  post 'sessions/destroy'
 
     resources :static_pages, :only => [:index]
     root :to => "static_pages#home"

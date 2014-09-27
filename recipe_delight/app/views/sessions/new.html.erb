@@ -1,5 +1,5 @@
 <h1>Login</h1>
-<div class="large-5 columsn">
+<div class="large-5 colums">
 <%= form_tag :action => "create" do %>
     <%= label_tag "Email" %>
     <%= text_field_tag "email" %>
@@ -7,5 +7,5 @@
     <%= password_field_tag "password" %>
     <%= submit_tag "Login"%>
 <% end %>
-<%= link_to "Register here!", root_path %>
+<%= link_to "Register here!", new_customer_path %>
 </div>
