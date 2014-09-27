@@ -1,0 +1,19 @@
+<h1>Add a new Recipe</h1> 
+<div class="large-5 column">	
+	<%= form_for @recipe do |form| %>
+		<%= form.label :author_id, "Author"%>
+		<%= form.text_field :author_id %>
+
+		<%= form.label :preptime, "Estimated Pretime" %> 
+		<%= form.text_field :preptime %>
+		
+		<%= form.label :cooktime, "Estimated Cooktime"%>
+		<%= form.text_field :cooktime %>
+
+		<%= form.label :directions, "directions"%>
+		<%= form.text_area :directions %>
+		<br/>	
+		<%= form.submit "Create" %>
+
+	<% end %>
+</div>
