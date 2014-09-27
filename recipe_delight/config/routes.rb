@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+    
+    resources :customers
+  get 'sessions/new'
+
+  post 'sessions/create'
+
+  get 'sessions/destroy'
+
+    resources :static_pages, :only => [:index]
+    root :to => "static_pages#home"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

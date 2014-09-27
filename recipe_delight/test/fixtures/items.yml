@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 1.5
+  barcode: MyString
+  store_id: 1
+  unit: MyString
+  available: false
+
+two:
+  name: MyString
+  price: 1.5
+  barcode: MyString
+  store_id: 1
+  unit: MyString
+  available: false

@@ -7,8 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
-</body>
+    <div class="row full_page">
+         <div class="large-2 columns">
+            <p>Sidebar on the left</p>
+         </div>
+         <div class="large-8 columns">
+            
+            <div class="row">
+                <div class="large-12 columns" align="center">
+                    <% flash.each do |name, message| %>
+                        <% if !name.nil? && !message.nil? %>
+                            <div data-alert class="alert-box <%=name%> radius">
+                                <p><%=message%></p>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+            <%= render 'static_pages/topbar' %>
+            <div class="large-12 columns">
+                
+                <%= yield %>
+            </div>
+         </div>
+         <div class="large-2 columns">
+            <p>Sidebar on the right</p>
+         </div>
+       </div>
+        
+   </body>
 </html>

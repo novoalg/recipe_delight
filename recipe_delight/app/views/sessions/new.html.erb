@@ -1,0 +1,11 @@
+<h1>Login</h1>
+<div class="large-5 columsn">
+<%= form_tag :action => "create" do %>
+    <%= label_tag "Email" %>
+    <%= text_field_tag "email" %>
+    <%= label_tag "Password" %>
+    <%= password_field_tag "password" %>
+    <%= submit_tag "Login"%>
+<% end %>
+<%= link_to "Register here!", root_path %>
+</div>
