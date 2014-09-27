@@ -1,15 +1,24 @@
 class Customer < ActiveRecord::Base
     before_save :encrypt_password
         
-    attr_accessor :email, :password, :password_confirmation
+    attr_accessor :password, :password_confirmation
+
     VALID_EMAIL_REGEX = /.+@.+/
-    validates :email, :presence => true, :length => { :minimum => 5 }, :uniqueness => true
+    #VALID_DOB_REGEX = /\d\d-\d\d-\d\d\d\d/
     validates_format_of :email, :with => VALID_EMAIL_REGEX 
-    validates :password, :presence => true, :length => { :minimum => 6 }, :confirmation => true
+    #validates_format_of :dob, :with => VALID_DOB_REGEX
+
+    validates_presence_of :email
+    validates_presence_of :name
+    validates_presence_of :dob
+    validates_presence_of :gender
+    validates_presence_of :password
+
+    validates :email, :length => { :minimum => 5 }, :uniqueness => true
+    validates :password, :length => { :minimum => 6 }, :confirmation => true
 
     def self.authenticate(email, password)
         user = find_by_email(email)
-        Rails.logger.info "****************************** #{user.inspect}"
         if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_digest)
             user
         else

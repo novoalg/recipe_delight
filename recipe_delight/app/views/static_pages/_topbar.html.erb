@@ -17,7 +17,21 @@
                     <%= link_to "Login", sessions_new_path %>
                 <% end %>
             </li> 
-            <li class="has-dropdown"> 
+            <% if current_user %>
+                <li class="has-dropdown not-click"> 
+                    <%= link_to "#{current_user.name}", customer_path(current_user) %>
+                    <ul class="dropdown"> 
+                        <li>
+                            <%= link_to "Profile", customer_path(current_user) %>
+                        </li> 
+                        <li>
+                            <%= link_to "Edit profile", edit_customer_path(current_user) %>
+                        </li> 
+                    </ul> 
+                </li> 
+
+            <% end %>
+            <li class="has-dropdown not-click"> 
                 <a href="#">Menu Dropdown</a>
                 <ul class="dropdown"> 
                     <li>

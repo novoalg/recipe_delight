@@ -1,2 +1,29 @@
-<h1>Customers#edit</h1>
-<p>Find me in app/views/customers/edit.html.erb</p>
+<h1>Edit profile</h1>
+<div class="large-5 columns">
+    <%= form_for @customer do |form| %>
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+        
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+
+        <%= form.label :dob, "Date of Birth" %>
+        <%= form.date_field :dob %>
+
+        <%= form.label :gender %>
+        
+        <%= form.radio_button("gender", "Male") %>
+        <%= form.label "Male" %>
+
+        <%= form.radio_button("gender", "Female") %>
+        <%= form.label "Female" %>
+
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation %>
+
+        <%= form.submit "Update" %>
+    <% end %>
+</div>

@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
-    
+    include ApplicationHelper
+    before_filter :check_user, :except => [:new, :create]
   def index
     @customers = Customer.all
   end
@@ -26,12 +27,13 @@ class CustomersController < ApplicationController
   end
 
   def edit
-    @customer = Customer.find(params[:customer])
+    @customer = Customer.find(params[:id])
   end
 
   def update
-    @customer = Custumer.find(params[:customer])
-    if @customer.update_attributes(customer_params)
+    logger.info "******************** #{params.inspect}"
+    @customer = Customer.find(params[:id])
+    if @customer.update_attributes(customer_params) 
         flash[:success] = "Your profile has been successfully updated."
         redirect_to @customer
     else
@@ -45,4 +47,8 @@ class CustomersController < ApplicationController
         params.require(:customer).permit!
     end
 
+    def check_user
+        customer = Customer.find(params[:id])
+        redirect_to root_url unless current_user?(customer)
+    end
 end
