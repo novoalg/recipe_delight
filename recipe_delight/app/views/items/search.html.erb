@@ -1,0 +1,32 @@
+<div class="large-12 columns">
+        <% for i in 0..(@product_count-1) %>
+        <img src=<%="#{@thumbnails[i]}"%>>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Price Before Discount</th>
+                    <th>Discount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%=@titles[i]%></td>
+                    <td><%=@official_prices[i]%></td>
+                    <td align="center"><%=@prices[i]%></td>
+                    <td><%=@percentages_saved[i].nil? ? "" : "#{@percentages_saved[i]}%"%></td>
+                </tr>
+                <% if !@amounts_saved[i].nil? && !@percentages_saved[i].nil? %>
+                    <tr>
+                        <td><b>You save: <%=@amounts_saved[i]%></b></td>
+                    </tr>
+                <% elsif @amounts_saved[i].nil? && !@percentages_saved[i].nil?%>
+                     <tr>
+                        <td><b>You save: $<%=((@percentages_saved[i].to_f/100.0) * @official_prices[i].gsub("$","").to_f).round(2)%></b></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <% end %>
+</div>
