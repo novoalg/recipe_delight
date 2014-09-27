@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
     
-    resources :customers
+  resources :customers
+
+	resources :recipes
+
   get 'sessions/new'
 
   post 'sessions/create'
