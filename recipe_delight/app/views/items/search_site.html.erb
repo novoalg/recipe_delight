@@ -1,0 +1,19 @@
+ <div class="row">
+    <% @items.each do |item| %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                </tr>
+            <tbody>
+                <tr>
+                    <td><%= item.name %></td>
+                    <td><%= item.price %></td>
+                    <td><%= item.unit %></td>
+                </tr>
+            </tbody>
+        </table>
+    <% end %>
+</div>

@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
     
 
+  get 'shopping_carts/checkout'
+  get 'shopping_carts/show'
+  put 'shopping_carts/add_item_to_cart'
+
+
 	resources :coupons
   resources :customers
   resources :items 
   post 'search/', :to => "items#search", :as => 'search_item'
+  post 'search_site/', :to => "items#search_site", :as => 'search_site_item'
   resources :recipes
 	post 'search/', :to => "recipes#search", :as => 'search_recipe'
 	get 'recipes/searches'

@@ -1,6 +1,12 @@
 class ItemsController < ApplicationController
     
     def index
+        @items = Item.all
+    end
+
+    def search_site
+        logger.info " ******* #{params[:Search]}"
+
     end
 
     def search
@@ -17,7 +23,7 @@ class ItemsController < ApplicationController
         @titles = Array.new
         @product_count = 0
         
-        @hash = JSON.load(open("https://api.target.com/v2/products/search?searchTerm=#{params[:Search]}&key=J5PsS2XGuqCnkdQq0Let6RSfvU7oyPwF"))
+        @hash = JSON.load(open("https://api.target.com/v2/products/search?searchTerm=#{params[:Search].gsub(/\s+/, "")}&key=J5PsS2XGuqCnkdQq0Let6RSfvU7oyPwF"))
         #logger.info "*********************** #{@hash["CatalogEntryView"][0]["CustomerReview"][0]["Reviews"]}"
         #@product_id = Array.new
         #@product_id = @product_id.paginate(:page => params[:page], :per_page => 10)
