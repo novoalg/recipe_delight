@@ -68,6 +68,7 @@ class RecipesController < ApplicationController
 
     def check_user 
         customer = Customer.find(params[:id])
-        redirect_to root_path unless current_user?(current_user)
+        logger.info "*****#{params}"
+        redirect_to root_path unless current_user?(customer)
     end
 end
