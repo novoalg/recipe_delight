@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
     
   resources :customers
-
-	resources :recipes
+  resources :items 
+  post 'search/', :to => "items#search", :as => 'search_item'
+  resources :recipes
+  resources :static_pages, :only => [:index]
 
   get 'sessions/new'
-
   post 'sessions/create'
-
   post 'sessions/destroy'
 
-    resources :static_pages, :only => [:index]
-    root :to => "static_pages#home"
+  root :to => "static_pages#home"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
