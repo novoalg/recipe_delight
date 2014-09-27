@@ -1,2 +1,18 @@
-<h1>Coupons#new</h1>
-<p>Find me in app/views/coupons/new.html.erb</p>
+<h1>New Coupon</h1>
+<div class="large-5 columns">
+    <%= form_for @Coupon do |form| %>
+		    <%= form.label :discount %>
+        <%= form.text_field :discount %>
+
+        <%= form.label :activate_date %>
+        <%= form.date_field :activate_date %>
+
+        <%= form.label :deactivate_date %>
+        <%= form.date_field :deactivate_date %>
+
+				<%= form.label :image %>
+				<%= form.file_field :image %> 
+
+        <%= form.submit "Create" %>
+    <% end %>
+</div>
